@@ -1,0 +1,73 @@
+
+
+
+' Clase base Producto
+abstract class Producto {
+    - nombre : String
+    - precio : double
+    + Producto()
+    + Producto(nombre : String, precio : double)
+    + getNombre() : String
+    + setNombre(nombre : String)
+    + getPrecio() : double
+    + setPrecio(precio : double)
+    + calcularPrecioFinal() : double
+}
+
+' Subclase ProductoFisico
+class ProductoFisico {
+    - costeEnvio : double
+    + ProductoFisico()
+    + ProductoFisico(nombre : String, precio : double, costeEnvio : double)
+    + getCosteEnvio() : double
+    + setCosteEnvio(costeEnvio : double)
+    + calcularPrecioFinal() : double
+}
+
+' Subclase ProductoDigital
+class ProductoDigital {
+    - tamañoDescarga : double
+    + ProductoDigital()
+    + ProductoDigital(nombre : String, precio : double, tamañoDescarga : double)
+    + getTamañoDescarga() : double
+    + setTamañoDescarga(tamañoDescarga : double)
+    + calcularPrecioFinal() : double
+}
+
+' Clase Cliente
+class Cliente {
+    - nombre : String
+    - correo : String
+    - direccion : String
+    + Cliente()
+    + Cliente(nombre : String, correo : String, direccion : String)
+    + getNombre() : String
+    + setNombre(nombre : String)
+    + getCorreo() : String
+    + setCorreo(correo : String)
+    + getDireccion() : String
+    + setDireccion(direccion : String)
+}
+
+' Clase Pedido
+class Pedido {
+    - cliente : Cliente
+    - productos : List<Producto>
+    + Pedido()
+    + Pedido(cliente : Cliente)
+    + agregarProducto(producto : Producto)
+    + calcularTotal() : double
+    + mostrarResumen()
+}
+
+' =========================
+' Relaciones
+' =========================
+
+Producto <|-- ProductoFisico
+Producto <|-- ProductoDigital
+
+Pedido --> Cliente : asociación
+Pedido o-- Producto : agregación
+
+@enduml
