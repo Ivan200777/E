@@ -10,14 +10,20 @@ public class Cliente {
     private String nombre;
     private String correo;
     private String direccion;
+    private int aniosAntiguedad;
+    private boolean esVip;
+    private String pais;
     private List<Pedido> pedidos;
 
     // creamos nuestro constructor cliente
-    public Cliente(String nombre, String correo, String direccion) {
+    public Cliente(String nombre, String correo, String direccion, int aniosAntiguedad, boolean esVip, String pais) {
         this.ID = "C " + contadorClientes++;
         this.nombre = nombre;
         this.correo = correo;
         this.direccion = direccion;
+        this.aniosAntiguedad=aniosAntiguedad;
+        this.esVip=esVip;
+        this.pais=pais;
         this.pedidos = new ArrayList<>();
 
     }
@@ -39,6 +45,17 @@ public class Cliente {
         return pedidos;
     }
 
+    public int getAniosAntiguedad() {
+        return aniosAntiguedad;
+    }
+     public boolean esVip() {
+        return esVip;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
     // setters
 
     public void setNombre(String nombre) {
@@ -55,6 +72,18 @@ public class Cliente {
 
     public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
+    }
+
+    public void setAniosAntiguedad(int aniosAntiguedad) {
+        this.aniosAntiguedad = aniosAntiguedad;
+    }
+
+    public void setEsVip(boolean esVip) {
+        this.esVip = esVip;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
     //introducimos el pedido

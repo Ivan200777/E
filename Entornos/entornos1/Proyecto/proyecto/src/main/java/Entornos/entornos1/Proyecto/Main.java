@@ -5,14 +5,13 @@ public class Main {
     public static void main(String[] args) {
 
         // Creamos los clientes
-        Cliente cliente1 = new Cliente("Iván Sarmiento", "ivi@gmail.com", "Av. Porfa ponme un 10 :) ");
-        Cliente cliente2 = new Cliente("Miguel González", "migui@gmail.com", "Calle Jerez 12");
+        Cliente cliente1 = new Cliente("Iván Sarmiento", "ivi@gmail.com", "Av. Porfa ponme un 10 :)", 3, false, "España");
+        Cliente cliente2 = new Cliente("Miguel González", "migui@gmail.com", "Calle Jerez 12", 7, true, "Francia");
 
         //  Creamos productos físicos
-        ProductoFisico teclado = new ProductoFisico("Teclado", 50, 5);
-        ProductoFisico monitor = new ProductoFisico("Monitor", 150, 10);
-        ProductoFisico raton = new ProductoFisico("Ratón", 300, 3);
-
+        ProductoFisico teclado = new ProductoFisico("Teclado", 50.0, 0.5, "España");
+        ProductoFisico monitor = new ProductoFisico("Monitor", 150.0, 3.0, "España");
+        ProductoFisico raton = new ProductoFisico("Ratón", 300.0, 0.3, "Francia");
         //  Creamos productos digitales
         ProductoDigital ebook = new ProductoDigital("eBook ", 15, 100);
         ProductoDigital antivirus = new ProductoDigital("Antivirus", 40, 4);
@@ -42,6 +41,14 @@ public class Main {
 
         System.out.println(" Resumen Pedidos Cliente 2 ");
         pedido2.mostrarResumen();
+
+        //Probamos que funcione tienda y las facturas
+        Tienda tienda = new Tienda();
+        Factura factura1 = tienda.realizarVenta(cliente1, pedido1);
+        Factura factura2 = tienda.realizarVenta(cliente2, pedido2);
+
+        System.out.println(factura1);
+        System.out.println(factura2);
     }
 }
 

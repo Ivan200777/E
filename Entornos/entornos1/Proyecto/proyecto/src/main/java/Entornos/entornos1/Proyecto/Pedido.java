@@ -42,6 +42,11 @@ public class Pedido {
     public void agregarProductos (Productos producto){
         productos.add(producto);
     }
+
+    //Ahora ya podemos eliminar un producto
+    public void eliminarProducto(Productos producto) {
+    productos.remove(producto);
+    }
     //Calculamos
      public double calcularTotal() {
         // TC-N05: lanza excepción si el pedido está vacío

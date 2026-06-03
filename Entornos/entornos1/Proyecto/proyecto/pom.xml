@@ -18,6 +18,7 @@
     <sonar.coverage.jacoco.xmlReportPaths>
         ${project.build.directory}/site/jacoco/jacoco.xml
     </sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.exclusions>src/ficheros/**</sonar.exclusions>
     
 </properties>
 
