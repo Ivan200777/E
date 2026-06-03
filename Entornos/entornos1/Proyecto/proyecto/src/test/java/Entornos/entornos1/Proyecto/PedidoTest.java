@@ -80,8 +80,7 @@ class PedidoTest {
         Cliente c = new Cliente("Luis", "luis@test.com", "Av. Central");
         Pedido pedido = new Pedido(c);
         pedido.agregarProductos(new ProductoFisico("Ratón", 30.0, 3.0));
-        assertFalse(pedido.calcularTotal() == 0.0);
-    }
+        assertNotEquals(0.0, pedido.calcularTotal());    }
 
     // CP-N04: Precio negativo lanza IllegalArgumentException
     @Test
@@ -144,4 +143,138 @@ class PedidoTest {
         pedido.agregarProductos(new ProductoFisico("B", p2, e2));
         assertEquals(esperado, pedido.calcularTotal(), 0.01);
     }
+
+    //TESTS ADICIONALES PARA COBERTURA 
+
+    @Test
+    @DisplayName("COV-01: Cliente getters y toString")
+    void testClienteGettersYToString() {
+        Cliente c = new Cliente("Ivan", "ivan@test.com", "Calle 1");
+        assertEquals("Ivan", c.getNombre());
+        assertEquals("ivan@test.com", c.getCorreo());
+        assertEquals("Calle 1", c.getDireccion());
+        assertNotNull(c.toString());
+    }
+
+    @Test
+    @DisplayName("COV-02: Cliente setters")
+    void testClienteSetters() {
+        Cliente c = new Cliente("Ivan", "ivan@test.com", "Calle 1");
+        c.setNombre("Pedro");
+        c.setCorreo("pedro@test.com");
+        c.setDireccion("Calle 2");
+        assertEquals("Pedro", c.getNombre());
+        assertEquals("pedro@test.com", c.getCorreo());
+        assertEquals("Calle 2", c.getDireccion());
+    }
+
+    @Test
+    @DisplayName("COV-03: Cliente agregarPedido")
+    void testClienteAgregarPedido() {
+        Cliente c = new Cliente("Ivan", "ivan@test.com", "Calle 1");
+        Pedido p = new Pedido(c);
+        c.agregarPedido(p);
+        assertFalse(c.getPedidos().isEmpty());
+    }
+
+    @Test
+    @DisplayName("COV-04: ProductoFisico toString y getCosteEnvio")
+    void testProductoFisicoToStringYGetter() {
+        ProductoFisico pf = new ProductoFisico("Raton", 30.0, 3.0);
+        assertNotNull(pf.toString());
+        assertEquals(3.0, pf.getCosteEnvio(), 0.01);
+    }
+
+    @Test
+    @DisplayName("COV-05: ProductoFisico setCosteEnvio")
+    void testProductoFisicoSetter() {
+        ProductoFisico pf = new ProductoFisico("Raton", 30.0, 3.0);
+        pf.setCosteEnvio(5.0);
+        assertEquals(5.0, pf.getCosteEnvio(), 0.01);
+    }
+
+    @Test
+    @DisplayName("COV-06: ProductoDigital toString y getTamanioDescarga")
+    void testProductoDigitalToStringYGetter() {
+        ProductoDigital pd = new ProductoDigital("eBook", 50.0, 10.0);
+        assertNotNull(pd.toString());
+        assertEquals(10.0, pd.getTamañoDescarga(), 0.01);
+    }
+
+    @Test
+    @DisplayName("COV-07: ProductoDigital setTamanioDescarga")
+    void testProductoDigitalSetter() {
+        ProductoDigital pd = new ProductoDigital("eBook", 50.0, 10.0);
+        pd.setTamañoDescarga(20.0);
+        assertEquals(20.0, pd.getTamañoDescarga(), 0.01);
+    }
+
+    @Test
+    @DisplayName("COV-08: Productos getID y getNombre")
+    void testProductosGetters() {
+        ProductoFisico pf = new ProductoFisico("Teclado", 40.0, 4.0);
+        assertNotNull(pf.getID());
+        assertEquals("Teclado", pf.getNombre());
+    }
+
+    @Test
+    @DisplayName("COV-09: Productos setNombre y setPrecio")
+    void testProductosSetters() {
+        ProductoFisico pf = new ProductoFisico("Teclado", 40.0, 4.0);
+        pf.setNombre("Monitor");
+        pf.setPrecio(100.0);
+        assertEquals("Monitor", pf.getNombre());
+        assertEquals(100.0, pf.getPrecio(), 0.01);
+    }
+
+    @Test
+    @DisplayName("COV-10: Pedido getters y setters")
+    void testPedidoGettersYSetters() {
+        Cliente c = new Cliente("Ivan", "ivan@test.com", "Calle 1");
+        Pedido p = new Pedido(c);
+        assertEquals(c, p.getCliente());
+        assertNotNull(p.getProductos());
+        p.setCliente(c);
+        p.setProductos(new java.util.ArrayList<>());
+        assertNotNull(p.getCliente());
+    }
+
+    @Test
+    @DisplayName("COV-11: Pedido mostrarResumen no lanza excepcion")
+    void testPedidoMostrarResumen() {
+        Cliente c = new Cliente("Ivan", "ivan@test.com", "Calle 1");
+        Pedido p = new Pedido(c);
+        p.agregarProductos(new ProductoFisico("Raton", 20.0, 2.0));
+        assertDoesNotThrow(p::mostrarResumen);
+    }
+
+    @Test
+    @DisplayName("COV-12: Pedido mostrarResumen con varios productos")
+    void testPedidoMostrarResumenVariosProductos() {
+        Cliente c = new Cliente("Ivan", "ivan@test.com", "Calle 1");
+        Pedido p = new Pedido(c);
+        p.agregarProductos(new ProductoFisico("Raton", 20.0, 2.0));
+        p.agregarProductos(new ProductoDigital("eBook", 50.0, 5.0));
+        assertDoesNotThrow(p::mostrarResumen);
+    }
+
+    @Test
+    @DisplayName("COV-13: Productos setPrecio negativo lanza excepcion")
+    void testProductosSetPrecioNegativo() {
+        ProductoFisico pf = new ProductoFisico("Teclado", 40.0, 4.0);
+        assertThrows(IllegalArgumentException.class,
+                () -> pf.setPrecio(-5.0));
+    }
+
+    @Test
+    @DisplayName("COV-14: Cliente setPedidos")
+    void testClienteSetPedidos() {
+        Cliente c = new Cliente("Ivan", "ivan@test.com", "Calle 1");
+        Pedido p = new Pedido(c);
+        java.util.List<Pedido> lista = new java.util.ArrayList<>();
+        lista.add(p);
+        c.setPedidos(lista);
+        assertEquals(1, c.getPedidos().size());
+    }
 }
+

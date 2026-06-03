@@ -29,11 +29,11 @@ public abstract class Productos {
 
     // Getters
     public String getID() {
-<span class="nc" id="L32">        return ID;</span>
+<span class="fc" id="L32">        return ID;</span>
     }
 
     public String getNombre() {
-<span class="nc" id="L36">        return nombre;</span>
+<span class="fc" id="L36">        return nombre;</span>
     }
 
     public double getPrecio() {
@@ -42,15 +42,15 @@ public abstract class Productos {
 
     // Setters
     public void setNombre(String nombre) {
-<span class="nc" id="L45">        this.nombre = nombre;</span>
-<span class="nc" id="L46">    }</span>
+<span class="fc" id="L45">        this.nombre = nombre;</span>
+<span class="fc" id="L46">    }</span>
 
     public void setPrecio(double precio) {
-<span class="nc bnc" id="L49" title="All 2 branches missed.">        if (precio &lt; 0) {</span>
-<span class="nc" id="L50">            throw new IllegalArgumentException(&quot;El precio no puede ser negativo.&quot;);</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (precio &lt; 0) {</span>
+<span class="fc" id="L50">            throw new IllegalArgumentException(&quot;El precio no puede ser negativo.&quot;);</span>
         }
-<span class="nc" id="L52">        this.precio = precio;</span>
-<span class="nc" id="L53">    }</span>
+<span class="fc" id="L52">        this.precio = precio;</span>
+<span class="fc" id="L53">    }</span>
 
     /**
      * Cada subclase implementa su propia lógica de precio final

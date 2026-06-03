@@ -10,12 +10,12 @@ public class ProductoFisico extends Productos {
 <span class="fc" id="L10">    }</span>
 
     public double getCosteEnvio() {
-<span class="nc" id="L13">        return costeEnvio;</span>
+<span class="fc" id="L13">        return costeEnvio;</span>
     }
 
     public void setCosteEnvio(double costeEnvio) {
-<span class="nc" id="L17">        this.costeEnvio = costeEnvio;</span>
-<span class="nc" id="L18">    }</span>
+<span class="fc" id="L17">        this.costeEnvio = costeEnvio;</span>
+<span class="fc" id="L18">    }</span>
 
     @Override 
     public double calcularPrecioFinal(){
@@ -24,7 +24,7 @@ public class ProductoFisico extends Productos {
 
     @Override 
     public String toString(){
-<span class="nc" id="L27">        return getID() + &quot;- &quot; + getNombre() + &quot; Físico. Precio Final: &quot; + calcularPrecioFinal() + &quot;(Coste de envío: &quot; + costeEnvio + &quot;)&quot;;</span>
+<span class="fc" id="L27">        return getID() + &quot;- &quot; + getNombre() + &quot; Físico. Precio Final: &quot; + calcularPrecioFinal() + &quot;(Coste de envío: &quot; + costeEnvio + &quot;)&quot;;</span>
     }
 
 }

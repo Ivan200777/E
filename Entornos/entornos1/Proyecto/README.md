@@ -1,3 +1,7 @@
+# Sistema de Gestión de Pedidos
+
+Proyecto de Entornos de Desarrollo — DAW, curso 2025/2026.
+
 Este proyecto está diseñado para gestionar pedidos de productos, tanto físicos como digitales, que hacen los clientes. En él vamos a encontrar clases que representarán a los clientes, pedidos y los productos, físicos y digitales, junto a sus relaciones.
 
 Vamos a ver primeramente las clases que ya hemos mencionado, después las relaciones, las funcionalidas, las instrucciones y un ejemplo de uso.
@@ -59,3 +63,21 @@ System.out.println("Resumen del Pedido:");
 pedido.mostrarResumen();
 
 El ejemplo está sacado de la práctica tal cual.
+
+## Casos de prueba
+
+| ID | Tipo | Qué prueba |
+|----|------|------------|
+| CP-P01 | Positivo | IVA 21% y descuento 10% en ProductoDigital |
+| CP-P02 | Positivo | Coste de envío en ProductoFisico |
+| CP-P03 | Positivo | calcularTotal() con productos mixtos |
+| CP-P04 | Positivo | Pedido con un único producto |
+| CP-P05 | Positivo | ProductoDigital con precio base 0 |
+| CP-N01 | Negativo | Precio final Digital ≠ precio base |
+| CP-N02 | Negativo | Precio final Físico ≠ precio base con envío |
+| CP-N03 | Negativo | Total con productos nunca es 0 |
+| CP-N04 | Negativo | Precio negativo → IllegalArgumentException |
+| CP-N05 | Negativo | Pedido vacío → IllegalStateException |
+| CP-PAR01 | Parametrizado | ProductoDigital con 5 precios distintos |
+| CP-PAR02 | Parametrizado | ProductoFisico con distintos precios y envíos |
+| CP-PAR03 | Parametrizado | calcularTotal() con combinaciones de dos productos |
