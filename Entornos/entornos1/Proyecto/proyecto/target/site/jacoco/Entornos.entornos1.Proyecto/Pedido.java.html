@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Pedido.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Proyecto</a> &gt; <a href="index.source.html" class="el_package">Entornos.entornos1.Proyecto</a> &gt; <span class="el_source">Pedido.java</span></div><h1>Pedido.java</h1><pre class="source lang-java linenums">package Entornos.entornos1.Proyecto;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import java.time.LocalDate;
+
+
+public class Pedido {
+    
+<span class="fc" id="L11">    private static int contadorPedidos = 1;</span>
+
+    private String ID;
+    private Cliente cliente; //introducimos Cliente para acceder a toda la información del cliente, lo que viene siendo la asociación.
+<span class="fc" id="L15">    private List&lt;Productos&gt; productos = new ArrayList&lt;&gt;();</span>
+    private LocalDate fecha;
+    //constructor
+
+<span class="fc" id="L19">    public Pedido (Cliente cliente) {</span>
+<span class="fc" id="L20">        this.ID  = &quot;PED&quot; + contadorPedidos++;</span>
+<span class="fc" id="L21">        this.cliente = cliente;</span>
+<span class="fc" id="L22">        this.productos = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L23">        this.fecha = LocalDate.now();</span>
+<span class="fc" id="L24">    }</span>
+
+    public Cliente getCliente() {
+<span class="nc" id="L27">        return cliente;</span>
+    }
+
+    public List&lt;Productos&gt; getProductos() {
+<span class="nc" id="L31">        return productos;</span>
+    }
+
+    public void setCliente(Cliente cliente) {
+<span class="nc" id="L35">        this.cliente = cliente;</span>
+<span class="nc" id="L36">    }</span>
+
+    public void setProductos(List&lt;Productos&gt; productos) {
+<span class="nc" id="L39">        this.productos = productos;</span>
+<span class="nc" id="L40">    }</span>
+    //Este es el método para añadir un producto
+    public void agregarProductos (Productos producto){
+<span class="fc" id="L43">        productos.add(producto);</span>
+<span class="fc" id="L44">    }</span>
+    //Calculamos
+     public double calcularTotal() {
+        // TC-N05: lanza excepción si el pedido está vacío
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        if (productos.isEmpty()) {</span>
+<span class="fc" id="L49">            throw new IllegalStateException(&quot;El pedido no tiene productos.&quot;);</span>
+        }
+<span class="fc" id="L51">        double total = 0;</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        for (Productos p : productos) {</span>
+<span class="fc" id="L53">            total += p.calcularPrecioFinal();</span>
+<span class="fc" id="L54">        }</span>
+<span class="fc" id="L55">        return total;</span>
+    }
+
+    //Resumen
+      public void mostrarResumen() {
+     
+<span class="nc" id="L61">        System.out.println(&quot;ID del Pedido &quot; + ID);</span>
+<span class="nc" id="L62">        System.out.println(&quot;Fecha: &quot; + fecha);</span>
+<span class="nc" id="L63">        System.out.println(&quot;Cliente: &quot; + cliente);</span>
+<span class="nc" id="L64">        System.out.println(&quot;Productos:&quot;);</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">        for (Productos p : productos) {</span>
+<span class="nc" id="L66">            System.out.println(&quot;- &quot; + p); // usa el toString de cada producto</span>
+<span class="nc" id="L67">        }</span>
+<span class="nc" id="L68">        System.out.println(&quot;Importe total: &quot; + calcularTotal());</span>
+<span class="nc" id="L69">        System.out.println(&quot;La compra ha sido completada con éxito.&quot;);</span>
+<span class="nc" id="L70">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

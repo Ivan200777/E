@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Proyecto,Entornos.entornos1.Proyecto,Cliente,44,28,0,0,15,8,10,2,10,2
+Proyecto,Entornos.entornos1.Proyecto,ProductoDigital,15,25,0,0,4,7,3,2,3,2
+Proyecto,Entornos.entornos1.Proyecto,ProductoFisico,17,14,0,0,4,4,3,2,3,2
+Proyecto,Entornos.entornos1.Proyecto,Main,104,0,0,0,24,0,2,0,2,0
+Proyecto,Entornos.entornos1.Proyecto,Pedido,60,66,2,4,16,17,6,6,5,4
+Proyecto,Entornos.entornos1.Proyecto,Productos,23,32,2,2,8,9,5,4,4,3

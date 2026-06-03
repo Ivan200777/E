@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Proyecto</a> &gt; <a href="index.source.html" class="el_package">Entornos.entornos1.Proyecto</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package Entornos.entornos1.Proyecto;
+
+<span class="nc" id="L3">public class Main {</span>
+
+    public static void main(String[] args) {
+
+        // Creamos los clientes
+<span class="nc" id="L8">        Cliente cliente1 = new Cliente(&quot;Iván Sarmiento&quot;, &quot;ivi@gmail.com&quot;, &quot;Av. Porfa ponme un 10 :) &quot;);</span>
+<span class="nc" id="L9">        Cliente cliente2 = new Cliente(&quot;Miguel González&quot;, &quot;migui@gmail.com&quot;, &quot;Calle Jerez 12&quot;);</span>
+
+        //  Creamos productos físicos
+<span class="nc" id="L12">        ProductoFisico teclado = new ProductoFisico(&quot;Teclado&quot;, 50, 5);</span>
+<span class="nc" id="L13">        ProductoFisico monitor = new ProductoFisico(&quot;Monitor&quot;, 150, 10);</span>
+<span class="nc" id="L14">        ProductoFisico raton = new ProductoFisico(&quot;Ratón&quot;, 300, 3);</span>
+
+        //  Creamos productos digitales
+<span class="nc" id="L17">        ProductoDigital ebook = new ProductoDigital(&quot;eBook &quot;, 15, 100);</span>
+<span class="nc" id="L18">        ProductoDigital antivirus = new ProductoDigital(&quot;Antivirus&quot;, 40, 4);</span>
+<span class="nc" id="L19">        ProductoDigital software = new ProductoDigital(&quot;Software de diseño&quot;, 100, 500);</span>
+
+        //  Creamos pedido para cliente1
+<span class="nc" id="L22">        Pedido pedido1 = new Pedido(cliente1);</span>
+<span class="nc" id="L23">        pedido1.agregarProductos(teclado);</span>
+<span class="nc" id="L24">        pedido1.agregarProductos(monitor);</span>
+<span class="nc" id="L25">        pedido1.agregarProductos(ebook);</span>
+
+        // Añadimos el pedido al cliente 
+<span class="nc" id="L28">        cliente1.agregarPedido(pedido1);</span>
+
+        //  Creamos el pedido para cliente2
+<span class="nc" id="L31">        Pedido pedido2 = new Pedido(cliente2);</span>
+<span class="nc" id="L32">        pedido2.agregarProductos(raton);</span>
+<span class="nc" id="L33">        pedido2.agregarProductos(antivirus);</span>
+<span class="nc" id="L34">        pedido2.agregarProductos(software);</span>
+
+        // Añadimos el pedido al cliente
+<span class="nc" id="L37">        cliente2.agregarPedido(pedido2);</span>
+
+        //  Mostramos el resumen de pedidos
+<span class="nc" id="L40">        System.out.println(&quot; Resumen Pedidos Cliente 1 &quot;);</span>
+<span class="nc" id="L41">        pedido1.mostrarResumen();</span>
+
+<span class="nc" id="L43">        System.out.println(&quot; Resumen Pedidos Cliente 2 &quot;);</span>
+<span class="nc" id="L44">        pedido2.mostrarResumen();</span>
+<span class="nc" id="L45">    }</span>
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
