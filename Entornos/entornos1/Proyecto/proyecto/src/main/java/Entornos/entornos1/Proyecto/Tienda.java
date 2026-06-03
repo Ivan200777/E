@@ -32,16 +32,13 @@ public class Tienda {
         for (Productos p : pedido.getProductos()) {
             double precioBase = p.getPrecio();
             totalNeto += precioBase;
-
-            if (p instanceof ProductoDigital) {
-                ProductoDigital pd = (ProductoDigital) p;
-                totalIva += precioBase * (pd.getMultiplicadorIva() - 1);
-            }
-
-            if (p instanceof ProductoFisico) {
-                ProductoFisico pf = (ProductoFisico) p;
-                totalEnvio += pf.calcularCosteEnvio();
-            }
+        
+    if (p instanceof ProductoDigital pd) {
+        totalIva += precioBase * (pd.getMultiplicadorIva() - 1);
+    }
+    if (p instanceof ProductoFisico pf) {
+        totalEnvio += pf.calcularCosteEnvio();
+    }
         }
 
         double totalDescuento = (totalNeto + totalIva + totalEnvio) * calcularDescuento(cliente);

@@ -1,9 +1,6 @@
 package Entornos.entornos1.Proyecto;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import java.time.LocalDate;
 
 /**
  * Clase abstracta base para todos los productos del sistema.
