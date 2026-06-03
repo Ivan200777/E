@@ -3,28 +3,51 @@
 public class ProductoFisico extends Productos {
     //Introducimos extends para hacer la herencia
     private double costeEnvio;
+    private double peso;
+    private String zonaDestino;
     //heredamos en el constructor los atributos de los productos.
-    public ProductoFisico (String nombre, double precio, double costeEnvio){
-<span class="fc" id="L8">        super(nombre, precio); // llama al constructor de la clase Productos</span>
-<span class="fc" id="L9">        this.costeEnvio = costeEnvio;</span>
-<span class="fc" id="L10">    }</span>
+    public ProductoFisico (String nombre, double precio, double peso, String zonaDestino){
+<span class="fc" id="L10">        super(nombre, precio); // llama al constructor de la clase Productos</span>
+<span class="fc" id="L11">        this.peso=peso;</span>
+<span class="fc" id="L12">        this.zonaDestino=zonaDestino;</span>
+<span class="fc" id="L13">    }</span>
 
-    public double getCosteEnvio() {
-<span class="fc" id="L13">        return costeEnvio;</span>
-    }
+    
 
     public void setCosteEnvio(double costeEnvio) {
-<span class="fc" id="L17">        this.costeEnvio = costeEnvio;</span>
-<span class="fc" id="L18">    }</span>
+<span class="nc" id="L18">        this.costeEnvio = costeEnvio;</span>
+<span class="nc" id="L19">    }</span>
 
-    @Override 
-    public double calcularPrecioFinal(){
-<span class="fc" id="L22">        return getPrecio()+ costeEnvio;</span>
+    public double getPeso() {
+<span class="nc" id="L22">        return peso;</span>
+    }
+    public void setPeso(double peso) {
+<span class="nc" id="L25">        this.peso = peso;</span>
+<span class="nc" id="L26">    }</span>
+
+    public String getZonaDestino() {
+<span class="nc" id="L29">        return zonaDestino;</span>
+    }
+
+    public void setZonaDestino(String zonaDestino) {
+<span class="nc" id="L33">        this.zonaDestino = zonaDestino;</span>
+<span class="nc" id="L34">    }</span>
+
+    public double calcularCosteEnvio() {
+<span class="fc bfc" id="L37" title="All 2 branches covered.">    if (zonaDestino.equalsIgnoreCase(&quot;España&quot;)) return 0;</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">    if (zonaDestino.equalsIgnoreCase(&quot;Francia&quot;) ||</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        zonaDestino.equalsIgnoreCase(&quot;Italia&quot;) ||</span>
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">        zonaDestino.equalsIgnoreCase(&quot;Portugal&quot;)) return 5;</span>
+<span class="fc" id="L41">    return 10;</span>
+}
+    @Override
+    public double calcularPrecioFinal() {
+<span class="fc" id="L45">        return getPrecio() + calcularCosteEnvio();</span>
     }
 
     @Override 
     public String toString(){
-<span class="fc" id="L27">        return getID() + &quot;- &quot; + getNombre() + &quot; Físico. Precio Final: &quot; + calcularPrecioFinal() + &quot;(Coste de envío: &quot; + costeEnvio + &quot;)&quot;;</span>
+<span class="fc" id="L50">        return getID() + &quot;- &quot; + getNombre() + &quot; Físico. Precio Final: &quot; + calcularPrecioFinal() + &quot;(Coste de envío: &quot; + costeEnvio + &quot;)&quot;;</span>
     }
 
 }

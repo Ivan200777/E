@@ -12,9 +12,7 @@ public class ProductoFisico extends Productos {
         this.zonaDestino=zonaDestino;
     }
 
-    public double getCosteEnvio() {
-        return costeEnvio;
-    }
+    
 
     public void setCosteEnvio(double costeEnvio) {
         this.costeEnvio = costeEnvio;
@@ -42,10 +40,9 @@ public class ProductoFisico extends Productos {
         zonaDestino.equalsIgnoreCase("Portugal")) return 5;
     return 10;
 }
-
-    @Override 
-    public double calcularPrecioFinal(){
-        return getPrecio()+ costeEnvio;
+    @Override
+    public double calcularPrecioFinal() {
+        return getPrecio() + calcularCosteEnvio();
     }
 
     @Override 

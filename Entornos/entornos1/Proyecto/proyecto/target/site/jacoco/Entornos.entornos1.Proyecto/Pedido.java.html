@@ -42,32 +42,37 @@ public class Pedido {
     public void agregarProductos (Productos producto){
 <span class="fc" id="L43">        productos.add(producto);</span>
 <span class="fc" id="L44">    }</span>
+
+    //Ahora ya podemos eliminar un producto
+    public void eliminarProducto(Productos producto) {
+<span class="fc" id="L48">    productos.remove(producto);</span>
+<span class="fc" id="L49">    }</span>
     //Calculamos
      public double calcularTotal() {
         // TC-N05: lanza excepción si el pedido está vacío
-<span class="fc bfc" id="L48" title="All 2 branches covered.">        if (productos.isEmpty()) {</span>
-<span class="fc" id="L49">            throw new IllegalStateException(&quot;El pedido no tiene productos.&quot;);</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">        if (productos.isEmpty()) {</span>
+<span class="fc" id="L54">            throw new IllegalStateException(&quot;El pedido no tiene productos.&quot;);</span>
         }
-<span class="fc" id="L51">        double total = 0;</span>
-<span class="fc bfc" id="L52" title="All 2 branches covered.">        for (Productos p : productos) {</span>
-<span class="fc" id="L53">            total += p.calcularPrecioFinal();</span>
-<span class="fc" id="L54">        }</span>
-<span class="fc" id="L55">        return total;</span>
+<span class="fc" id="L56">        double total = 0;</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        for (Productos p : productos) {</span>
+<span class="fc" id="L58">            total += p.calcularPrecioFinal();</span>
+<span class="fc" id="L59">        }</span>
+<span class="fc" id="L60">        return total;</span>
     }
 
     //Resumen
       public void mostrarResumen() {
      
-<span class="fc" id="L61">        System.out.println(&quot;ID del Pedido &quot; + ID);</span>
-<span class="fc" id="L62">        System.out.println(&quot;Fecha: &quot; + fecha);</span>
-<span class="fc" id="L63">        System.out.println(&quot;Cliente: &quot; + cliente);</span>
-<span class="fc" id="L64">        System.out.println(&quot;Productos:&quot;);</span>
-<span class="fc bfc" id="L65" title="All 2 branches covered.">        for (Productos p : productos) {</span>
-<span class="fc" id="L66">            System.out.println(&quot;- &quot; + p); // usa el toString de cada producto</span>
-<span class="fc" id="L67">        }</span>
-<span class="fc" id="L68">        System.out.println(&quot;Importe total: &quot; + calcularTotal());</span>
-<span class="fc" id="L69">        System.out.println(&quot;La compra ha sido completada con éxito.&quot;);</span>
-<span class="fc" id="L70">    }</span>
+<span class="fc" id="L66">        System.out.println(&quot;ID del Pedido &quot; + ID);</span>
+<span class="fc" id="L67">        System.out.println(&quot;Fecha: &quot; + fecha);</span>
+<span class="fc" id="L68">        System.out.println(&quot;Cliente: &quot; + cliente);</span>
+<span class="fc" id="L69">        System.out.println(&quot;Productos:&quot;);</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        for (Productos p : productos) {</span>
+<span class="fc" id="L71">            System.out.println(&quot;- &quot; + p); // usa el toString de cada producto</span>
+<span class="fc" id="L72">        }</span>
+<span class="fc" id="L73">        System.out.println(&quot;Importe total: &quot; + calcularTotal());</span>
+<span class="fc" id="L74">        System.out.println(&quot;La compra ha sido completada con éxito.&quot;);</span>
+<span class="fc" id="L75">    }</span>
 
 
 }

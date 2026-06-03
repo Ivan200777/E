@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Entornos.entornos1.Proyecto.PedidoTest" time="0.221" tests="39" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="Entornos.entornos1.Proyecto.TiendaFacturaIntegrationTest" time="0.021" tests="10" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -59,62 +59,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="testClienteSetPedidos" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.039"/>
-  <testcase name="testClienteSetters" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.002"/>
-  <testcase name="testProductoPrecioNegativo" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.002"/>
-  <testcase name="testClienteAgregarPedido" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testProductoFisicoSetCosteEnvio" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testProductosGetters" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testCalcularTotalParametrizado(double, double, double)[1]" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.025"/>
-  <testcase name="testCalcularTotalParametrizado(double, double, double)[2]" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testCalcularTotalParametrizado(double, double, double)[3]" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testPedidoUnSoloProducto" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.0"/>
-  <testcase name="testPedidoMostrarResumenVariosProductos" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.008">
-    <system-out><![CDATA[ID del Pedido PED7
-Fecha: 2026-06-03
-Cliente: C 8- Ivan  (ivan@test.com) -Calle 1
-Productos:
-- PROD10- Raton Físico. Precio Final: 20.0(Coste de envío: 0.0)
-- PROD11- eBook Digital. Precio Final: 54.45
-Importe total: 74.45
-La compra ha sido completada con éxito.
-]]></system-out>
-  </testcase>
-  <testcase name="testProductoDigitalIVAyDescuento" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testPedidoEliminarProducto" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.0"/>
-  <testcase name="testProductoFisicoCosteEnvio" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testPedidoVacioLanzaExcepcion" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testPedidoGettersYSetters" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testProductoFisicoToString" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testClienteGettersYToString" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testProductoDigitalToStringYGetter" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testPedidoCalculaTotalConProductosMixtos" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testProductoDigitalIVAInvalido" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testProductosSetters" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.0"/>
-  <testcase name="testPedidoMostrarResumen" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001">
-    <system-out><![CDATA[ID del Pedido PED12
-Fecha: 2026-06-03
-Cliente: C 14- Ivan  (ivan@test.com) -Calle 1
-Productos:
-- PROD21- Raton Físico. Precio Final: 20.0(Coste de envío: 0.0)
-Importe total: 20.0
-La compra ha sido completada con éxito.
-]]></system-out>
-  </testcase>
-  <testcase name="testProductosSetPrecioNegativo" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testProductoFisicoPrecioFinalDistinto" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.003"/>
-  <testcase name="testProductoDigitalParametrizado(double, double)[1]" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.002"/>
-  <testcase name="testProductoDigitalParametrizado(double, double)[2]" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.0"/>
-  <testcase name="testProductoDigitalParametrizado(double, double)[3]" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testProductoDigitalParametrizado(double, double)[4]" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testProductoDigitalParametrizado(double, double)[5]" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.0"/>
-  <testcase name="testProductoDigitalIVAReducidoYSuper" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.0"/>
-  <testcase name="testProductoDigitalPrecioCero" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testPedidoTotalNoEsCero" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testProductoDigitalSetter" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testProductoFisicoParametrizado(double, String, double)[1]" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.002"/>
-  <testcase name="testProductoFisicoParametrizado(double, String, double)[2]" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.0"/>
-  <testcase name="testProductoFisicoParametrizado(double, String, double)[3]" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.001"/>
-  <testcase name="testProductoFisicoParametrizado(double, String, double)[4]" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.0"/>
-  <testcase name="testProductoDigitalPrecioFinalDistinto" classname="Entornos.entornos1.Proyecto.PedidoTest" time="0.0"/>
+  <testcase name="testProductoPrecioNegativoNoLlegaATienda" classname="Entornos.entornos1.Proyecto.TiendaFacturaIntegrationTest" time="0.003"/>
+  <testcase name="testFacturaTieneCodigoYFecha" classname="Entornos.entornos1.Proyecto.TiendaFacturaIntegrationTest" time="0.001"/>
+  <testcase name="testDescuentoMaximo" classname="Entornos.entornos1.Proyecto.TiendaFacturaIntegrationTest" time="0.001"/>
+  <testcase name="testFacturaToStringDesglose" classname="Entornos.entornos1.Proyecto.TiendaFacturaIntegrationTest" time="0.004"/>
+  <testcase name="testVentaProductosMixtos" classname="Entornos.entornos1.Proyecto.TiendaFacturaIntegrationTest" time="0.001"/>
+  <testcase name="testDescuentoPorAntiguedad5Anios" classname="Entornos.entornos1.Proyecto.TiendaFacturaIntegrationTest" time="0.0"/>
+  <testcase name="testVentaPedidoVacioLanzaExcepcion" classname="Entornos.entornos1.Proyecto.TiendaFacturaIntegrationTest" time="0.001"/>
+  <testcase name="testVentaCompletaClienteNormal" classname="Entornos.entornos1.Proyecto.TiendaFacturaIntegrationTest" time="0.001"/>
+  <testcase name="testDescuentoClienteVip" classname="Entornos.entornos1.Proyecto.TiendaFacturaIntegrationTest" time="0.001"/>
+  <testcase name="testVentaConProductoFisico" classname="Entornos.entornos1.Proyecto.TiendaFacturaIntegrationTest" time="0.001"/>
 </testsuite>

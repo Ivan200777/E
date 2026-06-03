@@ -5,44 +5,51 @@
     public static void main(String[] args) {
 
         // Creamos los clientes
-<span class="nc" id="L8">        Cliente cliente1 = new Cliente(&quot;Iván Sarmiento&quot;, &quot;ivi@gmail.com&quot;, &quot;Av. Porfa ponme un 10 :) &quot;);</span>
-<span class="nc" id="L9">        Cliente cliente2 = new Cliente(&quot;Miguel González&quot;, &quot;migui@gmail.com&quot;, &quot;Calle Jerez 12&quot;);</span>
+<span class="nc" id="L8">        Cliente cliente1 = new Cliente(&quot;Iván Sarmiento&quot;, &quot;ivi@gmail.com&quot;, &quot;Av. Porfa ponme un 10 :)&quot;, 3, false, &quot;España&quot;);</span>
+<span class="nc" id="L9">        Cliente cliente2 = new Cliente(&quot;Miguel González&quot;, &quot;migui@gmail.com&quot;, &quot;Calle Jerez 12&quot;, 7, true, &quot;Francia&quot;);</span>
 
         //  Creamos productos físicos
-<span class="nc" id="L12">        ProductoFisico teclado = new ProductoFisico(&quot;Teclado&quot;, 50, 5);</span>
-<span class="nc" id="L13">        ProductoFisico monitor = new ProductoFisico(&quot;Monitor&quot;, 150, 10);</span>
-<span class="nc" id="L14">        ProductoFisico raton = new ProductoFisico(&quot;Ratón&quot;, 300, 3);</span>
-
+<span class="nc" id="L12">        ProductoFisico teclado = new ProductoFisico(&quot;Teclado&quot;, 50.0, 0.5, &quot;España&quot;);</span>
+<span class="nc" id="L13">        ProductoFisico monitor = new ProductoFisico(&quot;Monitor&quot;, 150.0, 3.0, &quot;España&quot;);</span>
+<span class="nc" id="L14">        ProductoFisico raton = new ProductoFisico(&quot;Ratón&quot;, 300.0, 0.3, &quot;Francia&quot;);</span>
         //  Creamos productos digitales
-<span class="nc" id="L17">        ProductoDigital ebook = new ProductoDigital(&quot;eBook &quot;, 15, 100);</span>
-<span class="nc" id="L18">        ProductoDigital antivirus = new ProductoDigital(&quot;Antivirus&quot;, 40, 4);</span>
-<span class="nc" id="L19">        ProductoDigital software = new ProductoDigital(&quot;Software de diseño&quot;, 100, 500);</span>
+<span class="nc" id="L16">        ProductoDigital ebook = new ProductoDigital(&quot;eBook &quot;, 15, 100);</span>
+<span class="nc" id="L17">        ProductoDigital antivirus = new ProductoDigital(&quot;Antivirus&quot;, 40, 4);</span>
+<span class="nc" id="L18">        ProductoDigital software = new ProductoDigital(&quot;Software de diseño&quot;, 100, 500);</span>
 
         //  Creamos pedido para cliente1
-<span class="nc" id="L22">        Pedido pedido1 = new Pedido(cliente1);</span>
-<span class="nc" id="L23">        pedido1.agregarProductos(teclado);</span>
-<span class="nc" id="L24">        pedido1.agregarProductos(monitor);</span>
-<span class="nc" id="L25">        pedido1.agregarProductos(ebook);</span>
+<span class="nc" id="L21">        Pedido pedido1 = new Pedido(cliente1);</span>
+<span class="nc" id="L22">        pedido1.agregarProductos(teclado);</span>
+<span class="nc" id="L23">        pedido1.agregarProductos(monitor);</span>
+<span class="nc" id="L24">        pedido1.agregarProductos(ebook);</span>
 
         // Añadimos el pedido al cliente 
-<span class="nc" id="L28">        cliente1.agregarPedido(pedido1);</span>
+<span class="nc" id="L27">        cliente1.agregarPedido(pedido1);</span>
 
         //  Creamos el pedido para cliente2
-<span class="nc" id="L31">        Pedido pedido2 = new Pedido(cliente2);</span>
-<span class="nc" id="L32">        pedido2.agregarProductos(raton);</span>
-<span class="nc" id="L33">        pedido2.agregarProductos(antivirus);</span>
-<span class="nc" id="L34">        pedido2.agregarProductos(software);</span>
+<span class="nc" id="L30">        Pedido pedido2 = new Pedido(cliente2);</span>
+<span class="nc" id="L31">        pedido2.agregarProductos(raton);</span>
+<span class="nc" id="L32">        pedido2.agregarProductos(antivirus);</span>
+<span class="nc" id="L33">        pedido2.agregarProductos(software);</span>
 
         // Añadimos el pedido al cliente
-<span class="nc" id="L37">        cliente2.agregarPedido(pedido2);</span>
+<span class="nc" id="L36">        cliente2.agregarPedido(pedido2);</span>
 
         //  Mostramos el resumen de pedidos
-<span class="nc" id="L40">        System.out.println(&quot; Resumen Pedidos Cliente 1 &quot;);</span>
-<span class="nc" id="L41">        pedido1.mostrarResumen();</span>
+<span class="nc" id="L39">        System.out.println(&quot; Resumen Pedidos Cliente 1 &quot;);</span>
+<span class="nc" id="L40">        pedido1.mostrarResumen();</span>
 
-<span class="nc" id="L43">        System.out.println(&quot; Resumen Pedidos Cliente 2 &quot;);</span>
-<span class="nc" id="L44">        pedido2.mostrarResumen();</span>
-<span class="nc" id="L45">    }</span>
+<span class="nc" id="L42">        System.out.println(&quot; Resumen Pedidos Cliente 2 &quot;);</span>
+<span class="nc" id="L43">        pedido2.mostrarResumen();</span>
+
+        //Probamos que funcione tienda y las facturas
+<span class="nc" id="L46">        Tienda tienda = new Tienda();</span>
+<span class="nc" id="L47">        Factura factura1 = tienda.realizarVenta(cliente1, pedido1);</span>
+<span class="nc" id="L48">        Factura factura2 = tienda.realizarVenta(cliente2, pedido2);</span>
+
+<span class="nc" id="L50">        System.out.println(factura1);</span>
+<span class="nc" id="L51">        System.out.println(factura2);</span>
+<span class="nc" id="L52">    }</span>
 }
 
 
